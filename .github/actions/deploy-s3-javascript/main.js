@@ -14,6 +14,9 @@ function run() {
     // aws cli comes with the action runner base packages
     exec.exec(`aws s3 sync ${distFolder} ${s3URI} --region ${bucketRegion}`)
     core.notice("Hello from my custom js action!")
+
+    const websiteUrl = `http://${bucket}.s3-website-${bucketRegion}.amazonaws.com`
+    core.setOutput('website-url', websiteUrl)
 }
 
 

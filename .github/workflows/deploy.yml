@@ -70,6 +70,9 @@ jobs:
         with:
           bucket: gha-custom-action-hosting1
           dist-folder: ./dist
+      - name: Output information
+        run: |
+          echo "Output: ${{ steps.deploy.outputs.website-url}}"
 
 
           
